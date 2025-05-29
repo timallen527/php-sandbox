@@ -1,5 +1,5 @@
 # PHP Sandbox
-An easy to stand up Dockerized environment with PHP, PHPUnit, and XDebug.
+An easy to stand up Dockerized environment with PHP, PHPUnit, and Xdebug.
 
 ## Getting Started
 ### Prerequisites
