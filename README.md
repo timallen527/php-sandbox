@@ -27,6 +27,9 @@ docker compose up -d --build
 docker compose down --remove-orphans
 ```
 
+## GitHub Action Workflow
+A GitHub Action Workflow is included that will run the tests when a pull request is opened or a push occurs to `master` or `develop`.
+
 ## Configuration
 PHP
 - The PHP image is configured using the `Dockerfile` with any additional configuration settings in the `docker/php/config` directory.
