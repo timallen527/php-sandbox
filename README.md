@@ -17,30 +17,20 @@ docker compose down --remove-orphans
 
 ### Install Composer Dependencies
 ``` sh
-docker compose run composer install
-```
-
-### Update Composer Dependencies
-``` sh
-docker compose run composer update
-```
-
-### Create the autoload file
-``` sh
-docker compose run composer dump-autoload
+./bin/composer install
 ```
 
 ### Run the Tests
-This script runs the PHPUnit tests within the PHP container and accepts parameters.
 ``` sh
 ./bin/phpunit
 ```
 
 ## Configuration
+PHP
+- The PHP image is configured using the `Dockerfile` with any additional configuration settings in the `docker/php/config` directory.
 
-- PHP
-  - The PHP image is configured using the `Dockerfile` with any additional configuration settings in the `config` directory.
-- PHPUnit
-  - `phpunit.xml`
-- Xdebug
-  - `docker/php/config/xdebug.ini`
+PHPUnit
+- `src/phpunit.xml`
+
+Xdebug
+- `docker/php/config/xdebug.ini`

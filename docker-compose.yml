@@ -1,17 +1,10 @@
 # docker-compose.yml
 name: php-sandbox
 services:
-  composer:
-    image: composer:2.8.4
-    environment:
-      - COMPOSER_CACHE_DIR=/app/var/cache/composer
-    volumes:
-      - .:/app
-    restart: no
   php:
     build:
       context: ./docker/php
     restart: always
     volumes:
-      - .:/app
+      - ./src:/app
     working_dir: /app
