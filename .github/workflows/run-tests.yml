@@ -1,0 +1,30 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - "develop"
+      - "master"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  run-tests:
+    name: run-tests
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - uses: actions/checkout@v4
+
+      # Stand Up docker container
+      - name: Stand Up Docker images
+        run: docker compose up -d --build
+
+      # Install composer dependencies
+      - name: Install Composer Dependencies
+        run: ./bin/composer install
+
+      # Run tests
+      - name: Run Tests
+        run: ./bin/phpunit
